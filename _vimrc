@@ -103,9 +103,6 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-" Show TAB
-set 
-
 " Set Bottom Command Height
 set cmdheight=3
 
@@ -128,6 +125,11 @@ set wildmenu
 
 " 対応する括弧やブレースを表示する
 set showmatch
+
+" abc → 大文字小文字を無視して検索
+" Abc → 大文字小文字を区別して検索
+set ignorecase
+set smartcase
 
 " BEGIN 挿入モード時、ステータスラインの色を変更する
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
@@ -161,42 +163,5 @@ function! s:GetHighlight(hi)
 endfunction
 " END 挿入モード時、ステータスラインの色を変更する
 
-" BEGIN dein
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
+execute 'set runtimepath^=' . '~/.cache/github.com/nerdtree'
 
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-" dein.vim が無ければ git.hub から落としてくる
-if &runtimepath !~# '/dein.vim'
-	if !isdirectory(s:dein_repo_dir)
-		execute '!git clone git@github.com:Shougo/dein.vim.git' s:dein_repo_dir
-	endif
-	execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-" 設定開始
-if dein#load_state(s:dein_dir)
-	call dein#begin(s:dein_dir)
-
-	" プラグインリストを納めたTOMLファイル
-	" 予めTOMLファイルを用意しておく
-	let g:rc_dir    = expand('~/.vim/rc)
-	let s:toml      = g:rc_dir . '/dein.toml'
-	let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-	" TOMLを読み込み、キャッシュしておく
-	call dein#load_toml(s:toml,      {'lazy':0})
-	call dein#load_toml(s:lazy_toml, {'lazy':1})
-
-	" 設定終了
-	call dein#end()
-	call dein#save_state()
-endif
-
-" もし未インストールのものがあったらインストール
-if dein#check_install()
-	call dein#install()
-endif
-" END dein
