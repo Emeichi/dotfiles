@@ -40,9 +40,9 @@ endif
 " ウインドウに関する設定:
 "
 " ウインドウの幅
-set columns=120
+set columns=80
 " ウインドウの高さ
-set lines=30
+set lines=20
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=3
 " ツールバーを消す

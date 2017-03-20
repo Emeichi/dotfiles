@@ -16,6 +16,7 @@ if v:progname =~? "evim"
 endif
 
 " Use Vim settings, rather than Vi settings (much better!).
+"
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -163,5 +164,15 @@ function! s:GetHighlight(hi)
 endfunction
 " END 挿入モード時、ステータスラインの色を変更する
 
+"--------------------------------------------------------------------------
+" プラグイン
 execute 'set runtimepath^=' . '~/.cache/github.com/nerdtree'
+
+"--------------------------------------------------------------------------
+" キーマップ
+nnoremap <Space>n :NERDTree<CR>
+nnoremap <Space>h ^
+nnoremap j gj
+nnoremap k gk
+vnoremap " xi""<Esc>hp
 
