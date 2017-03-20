@@ -1,0 +1,53 @@
+scriptencoding utf-8
+
+" 参考:
+"   :help gvimrc
+"   :echo $HOME
+"   :echo $VIM
+"   :version
+
+" エンコード設定:
+set encoding=utf-8
+
+"起動時のメッセージ抑制
+"set shortmess+=I
+
+"---------------------------------------------------------------------------
+" カラー設定:
+colorscheme one-dark
+
+"---------------------------------------------------------------------------
+" フォント設定:
+"
+if has('win32')
+  " Windows用
+  set guifont=Yu_Gothic:h12
+  "set guifont=MS_Mincho:h12:cshiftjis
+  " 行間隔の設定
+  "set linespace=1
+  " 一部のUCS文字の幅を自動計測して決める
+  "if has('kaoriya')
+  "  set ambiwidth=auto
+  "endif
+elseif has('mac')
+  "set guifont=Osaka－等幅:h14
+elseif has('xfontset')
+  " UNIX用 (xfontsetを使用)
+  "set guifontset=a14,r14,k14
+endif
+
+"---------------------------------------------------------------------------
+" ウインドウに関する設定:
+"
+" ウインドウの幅
+set columns=120
+" ウインドウの高さ
+set lines=30
+" コマンドラインの高さ(GUI使用時)
+set cmdheight=3
+" ツールバーを消す
+set guioptions-=T
+" メニューを消す
+set guioptions-=m
+" タブ表示
+set showtabline=1
