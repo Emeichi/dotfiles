@@ -174,5 +174,6 @@ nnoremap <Space>n :NERDTree<CR>
 nnoremap <Space>h ^
 nnoremap j gj
 nnoremap k gk
-vnoremap " xi""<Esc>hp
+vnoremap " xi""<Esc>hpl
+vnoremap ' xi''<Esc>hpl
 
