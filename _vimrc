@@ -132,7 +132,8 @@ set showmatch
 set ignorecase
 set smartcase
 
-" BEGIN 挿入モード時、ステータスラインの色を変更する
+"--------------------------------------------------------------------------
+" 挿入モード時、ステータスラインの色を変更する
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
@@ -162,7 +163,21 @@ function! s:GetHighlight(hi)
 	let hl = substitute(hl, 'xxx', '', '')
 	return hl
 endfunction
-" END 挿入モード時、ステータスラインの色を変更する
+
+"--------------------------------------------------------------------------
+" 全角半角を可視化する
+function! ZenkakuSpace()
+	highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+	augroup ZenkakuSpace
+		autocmd!
+		autocmd ColorScheme * call ZenkakuSpace()
+		autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+	augroup END
+	call ZenkakuSpace()
+endif
 
 "--------------------------------------------------------------------------
 " プラグイン
@@ -174,6 +189,8 @@ nnoremap <Space>n :NERDTree<CR>
 nnoremap <Space>h ^
 nnoremap j gj
 nnoremap k gk
+nnoremap o A<CR><Esc>
+
 vnoremap " xi""<Esc>hpl
 vnoremap ' xi''<Esc>hpl
 
