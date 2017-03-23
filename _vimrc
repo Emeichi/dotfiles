@@ -185,12 +185,12 @@ execute 'set runtimepath^=' . '~/.cache/github.com/nerdtree'
 
 "--------------------------------------------------------------------------
 " キーマップ
-nnoremap <Space>n :NERDTree<CR>
-nnoremap <Space>h ^
+nnoremap <SPACE>n :NERDTree<CR>
+nnoremap <SPACE>h ^
 nnoremap j gj
 nnoremap k gk
-nnoremap o A<CR><Esc>
+nnoremap o A<CR><ESC>
 
-vnoremap " xi""<Esc>hpl
-vnoremap ' xi''<Esc>hpl
+vnoremap " xi""<ESC>hp<RIGHT>
+vnoremap ' xi''<ESC>hp<RIGHT>
 
