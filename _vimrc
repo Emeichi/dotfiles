@@ -180,13 +180,30 @@ if has('syntax')
 endif
 
 "--------------------------------------------------------------------------
-" プラグイン
-execute 'set runtimepath^=' . '~/.cache/github.com/nerdtree'
+" NERDTree
+execute 'set runtimepath^=' . '$VIM/.cache/github.com/scrooloose/nerdtree'
+nnoremap <SPACE>n :NERDTree<CR>
 
 "--------------------------------------------------------------------------
-" キーマップ
-nnoremap <SPACE>n :NERDTree<CR>
-nnoremap <SPACE>h ^
+" unite.vim
+execute 'set runtimepath^=' . '$VIM/.cache/github.com/Shougo/unite.vim'
+"let g:unite_enable_start_insert = 1
+
+nnoremap <SPACE>b :Unite buffer<CR>
+"noremap <C-N> :Unite -buffer-name=file file<CR>
+"noremap <C-Z> :Unite file_mru<CR>
+noremap :uff :<C-u>UniteWithBufferDir file -buffer-name-file<CR>
+
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+"-------------------------------------------------------------------------
+" その他キーマップ
+noremap <SPACE>h ^
 nnoremap j gj
 nnoremap k gk
 nnoremap o A<CR><ESC>
