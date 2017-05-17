@@ -202,8 +202,21 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 "-------------------------------------------------------------------------
+" grep
+"let $PATH .= ';C:\Program Files\Git\usr\bin'
+"set grepprg=grep\ -n
+if has("win32")
+	let Grep_Path = ';C:\Program Files\Git\usr\bin\grep.exe'
+	let Grep_Xargs_Path = ';C:\Program Files\Git\usr\bin\xargs.exe'
+	let Grep_Find_Path = ';C:\Program Files\Git\usr\bin\find.exe'
+	let Grep_Shell_Quote_Char = '"'
+endif
+
+"-------------------------------------------------------------------------
 " その他キーマップ
-noremap <SPACE>h ^
+nnoremap <SPACE>h ^
+nnoremap <SPACE>w <C-w>w
+nnoremap <SPACE>t gt
 nnoremap j gj
 nnoremap k gk
 nnoremap o A<CR><ESC>
