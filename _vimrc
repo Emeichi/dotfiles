@@ -215,8 +215,8 @@ endif
 "-------------------------------------------------------------------------
 " その他キーマップ
 nnoremap <SPACE>h ^
-nnoremap <SPACE>w <C-w>w
-nnoremap <SPACE>t gt
+nnoremap <C-w> <C-w>w
+nnoremap <C-TAB> gt
 nnoremap j gj
 nnoremap k gk
 nnoremap o A<CR><ESC>

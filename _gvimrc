@@ -48,6 +48,6 @@ set cmdheight=3
 " ツールバーを消す
 set guioptions-=T
 " メニューを消す
-set guioptions-=m
+"set guioptions-=m
 " タブ表示
 set showtabline=1
