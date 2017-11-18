@@ -105,7 +105,7 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 " Set Bottom Command Height
-set cmdheight=3
+set cmdheight=1
 
 " Show Line Number
 set number
@@ -131,6 +131,9 @@ set showmatch
 " Abc → 大文字小文字を区別して検索
 set ignorecase
 set smartcase
+
+" ファイルのディレクトリに自動的に移動する
+set autochdir
 
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
