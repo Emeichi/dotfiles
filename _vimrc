@@ -132,6 +132,9 @@ set showmatch
 set ignorecase
 set smartcase
 
+" 長い行を折り返さない
+set nowrap
+
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
@@ -215,12 +218,14 @@ endif
 "-------------------------------------------------------------------------
 " その他キーマップ
 nnoremap <SPACE>h ^
-nnoremap <SPACE>w <C-w>w
-nnoremap <SPACE>t gt
-nnoremap j gj
-nnoremap k gk
+nnoremap <C-w> <C-w>w
+nnoremap <C-TAB> gt
+"nnoremap j gj
+"nnoremap k gk
 nnoremap o A<CR><ESC>
 
 vnoremap " xi""<ESC>hp<RIGHT>
 vnoremap ' xi''<ESC>hp<RIGHT>
+vnoremap * "zy:let @/ = @z<CR>n
+
 
