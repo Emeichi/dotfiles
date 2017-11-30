@@ -105,7 +105,7 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 " Set Bottom Command Height
-set cmdheight=1
+set cmdheight=3
 
 " Show Line Number
 set number
@@ -118,8 +118,14 @@ set shiftwidth=4
 set columns=140
 set lines=40
 
-" スワップファイルは使わない
-set noswapfile
+" スワップファイル
+"set noswapfile
+
+" バックアップファイルは使わない
+"set nobackup
+
+" アンドゥファイルは使わない
+set noundofile
 
 " コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
 set wildmenu
@@ -131,9 +137,6 @@ set showmatch
 " Abc → 大文字小文字を区別して検索
 set ignorecase
 set smartcase
-
-" ファイルのディレクトリに自動的に移動する
-set autochdir
 
 " 長い行を折り返さない
 set nowrap
