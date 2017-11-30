@@ -44,7 +44,7 @@ set columns=80
 " ウインドウの高さ
 set lines=20
 " コマンドラインの高さ(GUI使用時)
-set cmdheight=3
+set cmdheight=1
 " ツールバーを消す
 set guioptions-=T
 " メニューを消す
