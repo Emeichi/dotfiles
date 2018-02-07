@@ -141,6 +141,9 @@ set smartcase
 " 長い行を折り返さない
 set nowrap
 
+" 開いているファイルのディレクトリに移動する
+set autochdir
+
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
@@ -212,8 +215,8 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 "-------------------------------------------------------------------------
 " grep
-"let $PATH .= ';C:\Program Files\Git\usr\bin'
 "set grepprg=grep\ -n
+"let $PATH .= ';C:\Program Files\Git\usr\bin'
 if has("win32")
 	let Grep_Path = ';C:\Program Files\Git\usr\bin\grep.exe'
 	let Grep_Xargs_Path = ';C:\Program Files\Git\usr\bin\xargs.exe'
@@ -230,8 +233,8 @@ nnoremap <C-TAB> gt
 "nnoremap k gk
 nnoremap o A<CR><ESC>
 
-vnoremap " xi""<ESC>hp<RIGHT>
-vnoremap ' xi''<ESC>hp<RIGHT>
+"vnoremap " xi""<ESC>hp<RIGHT>
+"vnoremap ' xi''<ESC>hp<RIGHT>
 vnoremap * "zy:let @/ = @z<CR>n
 
 
