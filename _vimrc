@@ -231,7 +231,8 @@ nnoremap <C-w> <C-w>w
 nnoremap <C-TAB> gt
 "nnoremap j gj
 "nnoremap k gk
-nnoremap o A<CR><ESC>
+"nnoremap o A<CR><ESC>
+nnoremap c caw
 
 "vnoremap " xi""<ESC>hp<RIGHT>
 "vnoremap ' xi''<ESC>hp<RIGHT>
