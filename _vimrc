@@ -233,9 +233,10 @@ nnoremap <C-TAB> gt
 "nnoremap k gk
 "nnoremap o A<CR><ESC>
 nnoremap c caw
+nnoremap gp "*p
 
 "vnoremap " xi""<ESC>hp<RIGHT>
 "vnoremap ' xi''<ESC>hp<RIGHT>
 vnoremap * "zy:let @/ = @z<CR>n
-
-
+vnoremap gy "*y
+vnoremap gp "*p
