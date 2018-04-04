@@ -234,6 +234,8 @@ nnoremap <C-TAB> gt
 "nnoremap o A<CR><ESC>
 nnoremap c caw
 nnoremap gp "*p
+nnoremap gyy ^v$"*y
+nnoremap gdd ^v$"*d
 
 "vnoremap " xi""<ESC>hp<RIGHT>
 "vnoremap ' xi''<ESC>hp<RIGHT>
