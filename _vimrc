@@ -226,13 +226,15 @@ endif
 
 "-------------------------------------------------------------------------
 " その他キーマップ
-nnoremap <SPACE>h ^
+inoremap <C-j> <ESC>
+nnoremap <SPACE>s ^
+nnoremap <SPACE>e $
 nnoremap <C-w> <C-w>w
 nnoremap <C-TAB> gt
 "nnoremap j gj
 "nnoremap k gk
 "nnoremap o A<CR><ESC>
-nnoremap c caw
+"nnoremap c caw
 nnoremap gp "*p
 nnoremap gyy ^v$"*y
 nnoremap gdd ^v$"*d
