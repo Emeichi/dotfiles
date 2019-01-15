@@ -119,7 +119,7 @@ set columns=140
 set lines=40
 
 " スワップファイル
-"set noswapfile
+set noswapfile
 
 " バックアップファイルは使わない
 "set nobackup
