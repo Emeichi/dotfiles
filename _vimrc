@@ -226,6 +226,7 @@ endif
 
 "-------------------------------------------------------------------------
 " その他キーマップ
+inoremap <C-j> <ESC>
 nnoremap <SPACE>h ^
 nnoremap <C-w> <C-w>w
 nnoremap <C-TAB> gt
