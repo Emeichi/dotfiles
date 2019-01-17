@@ -191,28 +191,6 @@ if has('syntax')
 	call ZenkakuSpace()
 endif
 
-"--------------------------------------------------------------------------
-" NERDTree
-execute 'set runtimepath^=' . '$VIM/.cache/github.com/scrooloose/nerdtree'
-nnoremap <SPACE>n :NERDTree<CR>
-
-"--------------------------------------------------------------------------
-" unite.vim
-execute 'set runtimepath^=' . '$VIM/.cache/github.com/Shougo/unite.vim'
-"let g:unite_enable_start_insert = 1
-
-nnoremap <SPACE>b :Unite buffer<CR>
-"noremap <C-N> :Unite -buffer-name=file file<CR>
-"noremap <C-Z> :Unite file_mru<CR>
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name-file<CR>
-
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
 "-------------------------------------------------------------------------
 " grep
 "set grepprg=grep\ -n
@@ -224,16 +202,24 @@ if has("win32")
 	let Grep_Shell_Quote_Char = '"'
 endif
 
-"-------------------------------------------------------------------------
-" その他キーマップ
+"--------------------------------------------------------------------------
+" 以下、キーマップ
+"--------------------------------------------------------------------------
+
+nnoremap [MyOperation] <NOP>
+nnoremap <SPACE>m [MyOperation]
+
 inoremap <C-j> <ESC>
-nnoremap <SPACE>h ^
+nnoremap <SPACE>s ^
+nnoremap <SPACE>e $
 nnoremap <C-w> <C-w>w
 nnoremap <C-TAB> gt
-"nnoremap j gj
-"nnoremap k gk
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 "nnoremap o A<CR><ESC>
-nnoremap c caw
+"nnoremap c caw
 nnoremap gp "*p
 nnoremap gyy ^v$"*y
 nnoremap gdd ^v$"*d
@@ -243,3 +229,32 @@ nnoremap gdd ^v$"*d
 vnoremap * "zy:let @/ = @z<CR>n
 vnoremap gy "*y
 vnoremap gp "*p
+
+"--------------------------------------------------------------------------
+" NERDTree
+nnoremap [NERDTree] <NOP>
+nnoremap <SPACE>n [NERDTree]
+
+execute 'set runtimepath^=' . '$VIM/.cache/github.com/scrooloose/nerdtree'
+nnoremap [NERDTree]n :NERDTree<CR>
+
+"--------------------------------------------------------------------------
+" unite.vim
+nnoremap [unite] <NOP>
+nnoremap <SPACE>u [unite]
+
+execute 'set runtimepath^=' . '$VIM/.cache/github.com/Shougo/unite.vim'
+"let g:unite_enable_start_insert = 1
+
+nnoremap [unite]b :Unite buffer<CR>
+"noremap <C-N> :Unite -buffer-name=file file<CR>
+"noremap <C-Z> :Unite file_mru<CR>
+noremap [unite]f :<C-u>UniteWithBufferDir file -buffer-name-file<CR>
+
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
