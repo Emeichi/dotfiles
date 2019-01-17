@@ -206,14 +206,17 @@ endif
 " 以下、キーマップ
 "--------------------------------------------------------------------------
 
-nnoremap [MyOperation] <NOP>
-nnoremap <SPACE>m [MyOperation]
+"nnoremap [MyOperation] <NOP>
+"nemap <SPACE>m [MyOperation]
 
-inoremap <C-j> <ESC>
-nnoremap <SPACE>s ^
-nnoremap <SPACE>e $
-nnoremap <C-w> <C-w>w
-nnoremap <C-TAB> gt
+"inoremap <C-j> <ESC>
+inoremap fd <ESC>
+inoremap jk <C-o>
+
+nnoremap <SPACE>h ^
+nnoremap <SPACE>l $
+"nnoremap <C-w> <C-w>w
+"nnoremap <C-TAB> gt
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -232,16 +235,16 @@ vnoremap gp "*p
 
 "--------------------------------------------------------------------------
 " NERDTree
-nnoremap [NERDTree] <NOP>
-nnoremap <SPACE>n [NERDTree]
+nnoremap [NERDTree] <Nop>
+nmap <SPACE>n [NERDTree]
 
 execute 'set runtimepath^=' . '$VIM/.cache/github.com/scrooloose/nerdtree'
 nnoremap [NERDTree]n :NERDTree<CR>
 
 "--------------------------------------------------------------------------
 " unite.vim
-nnoremap [unite] <NOP>
-nnoremap <SPACE>u [unite]
+nnoremap [unite] <Nop>
+nmap <SPACE>u [unite]
 
 execute 'set runtimepath^=' . '$VIM/.cache/github.com/Shougo/unite.vim'
 "let g:unite_enable_start_insert = 1
