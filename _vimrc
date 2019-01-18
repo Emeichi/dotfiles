@@ -206,12 +206,14 @@ endif
 " 以下、キーマップ
 "--------------------------------------------------------------------------
 
+nmap ZZ <NOP>
+
 "nnoremap [MyOperation] <NOP>
 "nemap <SPACE>m [MyOperation]
 
-"inoremap <C-j> <ESC>
-inoremap fd <ESC>
-inoremap jk <C-o>
+inoremap <C-j> <ESC>
+"inoremap fd <ESC>
+"inoremap jk <C-o>
 
 nnoremap <SPACE>h ^
 nnoremap <SPACE>l $
