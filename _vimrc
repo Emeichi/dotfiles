@@ -215,10 +215,11 @@ inoremap <C-j> <ESC>
 "inoremap fd <ESC>
 "inoremap jk <C-o>
 
+nnoremap <C-j> <ESC>
 nnoremap <SPACE>h ^
 nnoremap <SPACE>l $
 "nnoremap <C-w> <C-w>w
-"nnoremap <C-TAB> gt
+nnoremap <C-TAB> gt
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -229,6 +230,7 @@ nnoremap gp "*p
 nnoremap gyy ^v$"*y
 nnoremap gdd ^v$"*d
 
+vnoremap <C-j> <ESC>
 "vnoremap " xi""<ESC>hp<RIGHT>
 "vnoremap ' xi''<ESC>hp<RIGHT>
 vnoremap * "zy:let @/ = @z<CR>n
