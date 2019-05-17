@@ -113,6 +113,8 @@ set number
 " Set Tab Width
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Set Window Size
 set columns=140
@@ -229,6 +231,7 @@ nnoremap gk k
 nnoremap gp "*p
 nnoremap gyy ^v$"*y
 nnoremap gdd ^v$"*d
+nnoremap // I//<ESC>
 
 vnoremap <C-j> <ESC>
 "vnoremap " xi""<ESC>hp<RIGHT>
