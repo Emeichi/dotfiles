@@ -146,6 +146,9 @@ set nowrap
 " 開いているファイルのディレクトリに移動する
 set autochdir
 
+set encoding=sjis
+set fileencodings=utf-8,cp932,sjis
+
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
@@ -218,8 +221,11 @@ inoremap <C-j> <ESC>
 "inoremap jk <C-o>
 
 nnoremap <C-j> <ESC>
-nnoremap <SPACE>h ^
-nnoremap <SPACE>l $
+"nnoremap <SPACE>h ^
+"nnoremap <SPACE>l $
+nnoremap <SPACE>l= 78i=<ESC>^
+nnoremap <SPACE>l- 78i-<ESC>^
+nnoremap <SPACE>l* 78i*<ESC>^
 "nnoremap <C-w> <C-w>w
 nnoremap <C-TAB> gt
 nnoremap j gj
