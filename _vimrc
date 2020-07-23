@@ -1,3 +1,4 @@
+source $VIMRUNTIME/defaults.vim
 
 " An example for a vimrc file.
 "
@@ -266,4 +267,8 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split
 au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+"--------------------------------------------------------------------------
+" surround
+execute 'set runtimepath^=' . '$VIM/.cache/github.com/vim-surround/plugin'
 
