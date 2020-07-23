@@ -1,59 +1,61 @@
 "scriptencoding utf-8
 
+:set background=light
+
 
 "---------------------------------------------------------------------------
-" ãƒ•ãƒ©ã‚°è¨­å®š
-set guioptions+=b " æ°´å¹³ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼è¡¨ç¤º
-set guioptions+=h " æ°´å¹³ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã®é•·ã•ã‚’ç¾åœ¨è¡Œã®é•·ã•ã«åˆ¶é™
+" ƒtƒ‰ƒOİ’è
+set guioptions+=b " …•½ƒXƒNƒ[ƒ‹ƒo[•\¦
+set guioptions+=h " …•½ƒXƒNƒ[ƒ‹ƒo[‚Ì’·‚³‚ğŒ»İs‚Ì’·‚³‚É§ŒÀ
 
-" å‚è€ƒ:
+" Ql:
 "   :help gvimrc
 "   :echo $HOME
 "   :echo $VIM
 "   :version
 
-" ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰è¨­å®š:
+" ƒGƒ“ƒR[ƒhİ’è:
 "set encoding=utf-8
 
-"èµ·å‹•æ™‚ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æŠ‘åˆ¶
+"‹N“®‚ÌƒƒbƒZ[ƒW—}§
 "set shortmess+=I
 
 "---------------------------------------------------------------------------
-" ã‚«ãƒ©ãƒ¼è¨­å®š:
+" ƒJƒ‰[İ’è:
 colorscheme one
 
 "---------------------------------------------------------------------------
-" ãƒ•ã‚©ãƒ³ãƒˆè¨­å®š:
+" ƒtƒHƒ“ƒgİ’è:
 "
 if has('win32')
-  " Windowsç”¨
+  " Windows—p
   set guifont=Yu_Gothic:h12:cshiftjis
   "set guifont=MS_Mincho:h12:cshiftjis
-  " è¡Œé–“éš”ã®è¨­å®š
+  " sŠÔŠu‚Ìİ’è
   set linespace=1
-  " ä¸€éƒ¨ã®UCSæ–‡å­—ã®å¹…ã‚’è‡ªå‹•è¨ˆæ¸¬ã—ã¦æ±ºã‚ã‚‹
+  " ˆê•”‚ÌUCS•¶š‚Ì•‚ğ©“®Œv‘ª‚µ‚ÄŒˆ‚ß‚é
   if has('kaoriya')
     set ambiwidth=auto
   endif
 elseif has('mac')
-  "set guifont=Osakaï¼ç­‰å¹…:h14
+  "set guifont=Osaka|“™•:h14
 elseif has('xfontset')
-  " UNIXç”¨ (xfontsetã‚’ä½¿ç”¨)
+  " UNIX—p (xfontset‚ğg—p)
   "set guifontset=a14,r14,k14
 endif
 
 "---------------------------------------------------------------------------
-" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«é–¢ã™ã‚‹è¨­å®š:
+" ƒEƒCƒ“ƒhƒE‚ÉŠÖ‚·‚éİ’è:
 "
-" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®å¹…
+" ƒEƒCƒ“ƒhƒE‚Ì•
 set columns=80
-" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
+" ƒEƒCƒ“ƒhƒE‚Ì‚‚³
 set lines=20
-" ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®é«˜ã•(GUIä½¿ç”¨æ™‚)
+" ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì‚‚³(GUIg—p)
 set cmdheight=1
-" ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚’æ¶ˆã™
+" ƒc[ƒ‹ƒo[‚ğÁ‚·
 set guioptions-=T
-" ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’æ¶ˆã™
+" ƒƒjƒ…[‚ğÁ‚·
 "set guioptions-=m
-" ã‚¿ãƒ–è¡¨ç¤º
+" ƒ^ƒu•\¦
 set showtabline=1
