@@ -11,6 +11,9 @@ source $VIMRUNTIME/defaults.vim
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+set fileencodings=utf-8,cp932
+set laststatus=2
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
