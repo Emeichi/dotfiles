@@ -30,7 +30,7 @@ set backspace=indent,eol,start
 "  set undofile		" keep an undo file (undo changes after closing)
 "endif
 
-set history=50		" keep 50 lines of command line history
+set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -56,6 +56,8 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+
+set cursorline
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -105,7 +107,7 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 " Set Bottom Command Height
-set cmdheight=3
+set cmdheight=1
 
 " Show Line Number
 set number
@@ -211,11 +213,11 @@ nmap ZZ <NOP>
 "nnoremap [MyOperation] <NOP>
 "nemap <SPACE>m [MyOperation]
 
-inoremap <C-j> <ESC>
+inoremap <C-l> <ESC>
 "inoremap fd <ESC>
 "inoremap jk <C-o>
 
-nnoremap <C-j> <ESC>
+nnoremap <C-l> <ESC>
 nnoremap <SPACE>h ^
 nnoremap <SPACE>l $
 "nnoremap <C-w> <C-w>w
@@ -230,7 +232,7 @@ nnoremap gp "*p
 nnoremap gyy ^v$"*y
 nnoremap gdd ^v$"*d
 
-vnoremap <C-j> <ESC>
+vnoremap <C-l> <ESC>
 "vnoremap " xi""<ESC>hp<RIGHT>
 "vnoremap ' xi''<ESC>hp<RIGHT>
 vnoremap * "zy:let @/ = @z<CR>n
