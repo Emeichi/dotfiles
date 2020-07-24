@@ -150,6 +150,9 @@ set nowrap
 " 開いているファイルのディレクトリに移動する
 set autochdir
 
+" matchit プラグイン有効化
+packadd! matchit
+
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
 "-------------------------------------------------------------------------
@@ -247,12 +250,63 @@ vnoremap gy "*y
 vnoremap gp "*p
 
 "--------------------------------------------------------------------------
+" プラグイン管理 dein.vim
+"--------------------------------------------------------------------------
+" install dir {{{
+let s:dein_dir = '~/.vim/.cache/dein'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" }}}
+
+" dein installation check {{{
+if &runtimepath !~# 'dein.vim'
+	if !isdirectory(expand(s:dein_repo_dir))
+		execute '!git clone https://github.com/Shougo/dein.vim' expand(s:dein_repo_dir)
+	endif
+	execute 'set runtimepath^=' . s:dein_repo_dir
+endif
+" }}}
+
+" begin settings {{{
+if dein#load_state(s:dein_dir)
+	call dein#begin(s:dein_dir)
+
+	" .toml file
+	let s:rc_dir = '~/vimfiles'
+	if !isdirectory(expand(s:rc_dir))
+		call mkdir(expand(s:rc_dir), 'p')
+	endif
+	let s:toml = s:rc_dir . '/dein.toml'
+
+	" read toml and cache
+	call dein#load_toml(s:toml, {'lazy': 0})
+
+	" end settings
+	call dein#end()
+	call dein#save_state()
+endif
+" }}}
+
+" plugin installation check {{{
+if dein#check_install()
+	call dein#install()
+endif
+" }}}
+
+" plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+	call map(s:removed_plugins, "delete(v:val, 'rf')")
+	call dein#recache_runtimepath()
+endif
+" }}}
+
+"--------------------------------------------------------------------------
 " NERDTree
 "--------------------------------------------------------------------------
 nnoremap [NERDTree] <Nop>
 nmap <SPACE>n [NERDTree]
 
-execute 'set runtimepath^=' . '$VIM/.cache/github.com/scrooloose/nerdtree'
+execute 'set runtimepath^=' . s:dein_dir . '/github.com/scrooloose/nerdtree'
 nnoremap [NERDTree]n :NERDTree<CR>
 
 "--------------------------------------------------------------------------
@@ -261,7 +315,7 @@ nnoremap [NERDTree]n :NERDTree<CR>
 nnoremap [unite] <Nop>
 nmap <SPACE>u [unite]
 
-execute 'set runtimepath^=' . '$VIM/.cache/github.com/Shougo/unite.vim'
+execute 'set runtimepath^=' . s:dein_dir . '/github.com/Shougo/unite.vim'
 "let g:unite_enable_start_insert = 1
 
 nnoremap [unite]b :Unite buffer<CR>
