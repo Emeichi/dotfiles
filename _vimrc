@@ -119,6 +119,8 @@ set number
 " Set Tab Width
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Set Window Size
 set columns=140
@@ -149,6 +151,10 @@ set nowrap
 
 " 開いているファイルのディレクトリに移動する
 set autochdir
+
+" エンコード
+set encoding=sjis
+set fileencodings=utf-8,cp932,sjis
 
 " matchit プラグイン有効化
 packadd! matchit
@@ -227,11 +233,13 @@ inoremap <C-l> <ESC>
 "inoremap fd <ESC>
 "inoremap jk <C-o>
 
-nnoremap <C-l> <ESC>
-nnoremap <SPACE>h ^
-nnoremap <SPACE>l $
+nnoremap <C-j> <ESC>
+"nnoremap <SPACE>h ^
+"nnoremap <SPACE>l $
+nnoremap <SPACE>l= 78i=<ESC>^
+nnoremap <SPACE>l- 78i-<ESC>^
+nnoremap <SPACE>l* 78i*<ESC>^
 "nnoremap <C-w> <C-w>w
-nnoremap <C-TAB> gt
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
