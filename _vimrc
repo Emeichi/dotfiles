@@ -152,6 +152,7 @@ set autochdir
 
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
+"-------------------------------------------------------------------------
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
@@ -184,6 +185,7 @@ endfunction
 
 "--------------------------------------------------------------------------
 " 全角半角を可視化する
+"-------------------------------------------------------------------------
 function! ZenkakuSpace()
 	highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
@@ -199,6 +201,7 @@ endif
 
 "-------------------------------------------------------------------------
 " grep
+"-------------------------------------------------------------------------
 "set grepprg=grep\ -n
 "let $PATH .= ';C:\Program Files\Git\usr\bin'
 if has("win32")
