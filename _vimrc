@@ -53,13 +53,7 @@ if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
+" 現在行をハイライト
 set cursorline
 
 " Only do this part when compiled with support for autocommands.
@@ -121,10 +115,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" Set Window Size
-set columns=140
-set lines=40
-
 " スワップファイル
 set noswapfile
 
@@ -152,11 +142,27 @@ set nowrap
 set autochdir
 
 " エンコード
-set encoding=sjis
+"set encoding=utf-8
 set fileencodings=utf-8,cp932,sjis
 
 " matchit プラグイン有効化
 packadd! matchit
+
+"--------------------------------------------------------------------------
+" 全角半角を可視化する
+"-------------------------------------------------------------------------
+function! ZenkakuSpace()
+	highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+	augroup ZenkakuSpace
+		autocmd!
+		autocmd ColorScheme * call ZenkakuSpace()
+		autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+	augroup END
+	call ZenkakuSpace()
+endif
 
 "--------------------------------------------------------------------------
 " 挿入モード時、ステータスラインの色を変更する
@@ -190,22 +196,6 @@ function! s:GetHighlight(hi)
 	let hl = substitute(hl, 'xxx', '', '')
 	return hl
 endfunction
-
-"--------------------------------------------------------------------------
-" 全角半角を可視化する
-"-------------------------------------------------------------------------
-function! ZenkakuSpace()
-	highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-endfunction
-
-if has('syntax')
-	augroup ZenkakuSpace
-		autocmd!
-		autocmd ColorScheme * call ZenkakuSpace()
-		autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
-	augroup END
-	call ZenkakuSpace()
-endif
 
 "-------------------------------------------------------------------------
 " grep
@@ -338,4 +328,9 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 " シンタックスをONにする（最後に設定しないと効かなかった）
-syntax on
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
