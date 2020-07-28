@@ -313,7 +313,7 @@ endif
 nnoremap [NERDTree] <Nop>
 nmap <SPACE>n [NERDTree]
 
-execute 'set runtimepath^=' . s:dein_dir . '/github.com/scrooloose/nerdtree'
+execute 'set runtimepath^=' . s:dein_dir . '/repos/github.com/scrooloose/nerdtree'
 nnoremap [NERDTree]n :NERDTree<CR>
 
 "--------------------------------------------------------------------------
@@ -322,7 +322,7 @@ nnoremap [NERDTree]n :NERDTree<CR>
 nnoremap [unite] <Nop>
 nmap <SPACE>u [unite]
 
-execute 'set runtimepath^=' . s:dein_dir . '/github.com/Shougo/unite.vim'
+execute 'set runtimepath^=' . s:dein_dir . '/repos/github.com/Shougo/unite.vim'
 "let g:unite_enable_start_insert = 1
 
 nnoremap [unite]b :Unite buffer<CR>
