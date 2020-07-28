@@ -11,8 +11,6 @@ source $VIMRUNTIME/defaults.vim
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-set laststatus=2
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -22,6 +20,8 @@ endif
 "
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+set laststatus=2
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -337,3 +337,5 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+" シンタックスをONにする（最後に設定しないと効かなかった）
+syntax on
